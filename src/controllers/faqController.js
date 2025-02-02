@@ -14,12 +14,20 @@ exports.getFAQsByLanguage = async (req, res) => {
 
 // Add a new FAQ
 exports.addFAQ = async (req, res) => {
-  const { question, answer, language } = req.body;
-  
-  try {
-    const newFAQ = await FAQ.create({ question, answer, language });
-    res.status(201).json(newFAQ);
-  } catch (error) {
-    res.status(500).json({ message: 'Error creating FAQ' });
-  }
+    try {
+        console.log("Inside addFAQ controller!");
+        console.log("Request Data:", req.body);
+
+        const { question, answer, language } = req.body;
+        if (!question || !answer || !language) {
+            return res.status(400).json({ error: "Missing required fields" });
+        }
+
+        const newFAQ = await FAQ.create({ question, answer, language });
+
+        res.status(201).json({ message: "FAQ added successfully", faq: newFAQ });
+    } catch (error) {
+        console.error("Error adding FAQ:", error);
+        res.status(500).json({ error: "Internal server error" });
+    }
 };

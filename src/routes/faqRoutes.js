@@ -6,6 +6,10 @@ const faqController = require('../controllers/faqController');
 router.get('/faqs/lang/:language', faqController.getFAQsByLanguage);
 
 // Route to add a new FAQ
-router.post('/faqs', faqController.addFAQ);
+// router.post('/faqs', faqController.addFAQ);
+router.post('/faqs', (req, res, next) => {
+    console.log("POST /faqs hit!");
+    next();
+}, faqController.addFAQ);
 
 module.exports = router;
