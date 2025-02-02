@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multilingual FAQ Service</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Multilingual FAQ Service</h1>
+
+        <!-- Language Selector -->
+        <div class="language-selector">
+            <label for="language">Select Language:</label>
+            <select id="language">
+                <option value="en">English</option>
+                <option value="hi">Hindi</option>
+            </select>
+            <button id="fetchFAQs">Load FAQs</button>
+        </div>
+
+        <!-- FAQ Display -->
+        <div id="faqList" class="faq-list"></div>
+
+        <!-- FAQ Submission Form -->
+        <h2>Add a New FAQ</h2>
+        <form id="faqForm">
+            <div class="form-group">
+                <input type="text" id="question" placeholder="Enter question" required>
+                <textarea id="answer" placeholder="Enter answer" required></textarea>
+            </div>
+            <div class="form-group">
+                <select id="faqLanguage">
+                    <option value="en">English</option>
+                    <option value="hi">Hindi</option>
+                </select>
+                <button type="submit">Submit FAQ</button>
+            </div>
+        </form>
+    </div>
+
+    <script src="./js/index.js"></script>
+</body>
+</html>
