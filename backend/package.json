@@ -7,5 +7,17 @@
     "nodemon": "^3.1.9",
     "pg": "^8.13.1",
     "sequelize": "^6.37.5"
-  }
+  },
+  "name": "backend",
+  "version": "1.0.0",
+  "main": "src/server.js",
+  "devDependencies": {},
+  "scripts": {
+    "start": "node src/server.js", 
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
 }
